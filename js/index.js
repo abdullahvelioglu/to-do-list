@@ -121,5 +121,5 @@ $(".fa-plus").click(function() {
   $("input[type='text']").fadeToggle();
 })
 
-testfun2();
 testfun();
+testfun2();
