@@ -70,3 +70,26 @@ $("input[type=text]").keypress(function(e) {
     testfun2();
   }
 })
+
+var visib = function(e) {
+  if (!popuptoggled) {
+    if (e === "warning") {
+      gottenpopup.style.opacity = "100";
+      gottenpopup.style.height = "50px";
+      gottenpopup.style.color = "red";
+      gottenpopup.textContent = "Please enter a to-do event!";
+      popuptoggled = true;
+      setTimeout(OpenPU, 4000);
+    } else if (e === "added") {
+      gottenpopup.style.color = "#FFF";
+      gottenpopup.style.opacity = "100";
+      gottenpopup.style.height = "50px";
+      gottenpopup.textContent = "To-do event added!";
+      popuptoggled = true;
+      setTimeout(OpenPU, 4000);
+    } else {
+      console.log("WARNING");
+    }
+  }
+
+}
