@@ -93,3 +93,30 @@ var visib = function(e) {
   }
 
 }
+
+var OpenPU = function() {
+  if (!popuptoggled) {
+    gottenpopup.style.opacity = "100";
+    gottenpopup.style.height = "200px";
+    popuptoggled = true;
+  } else {
+    gottenpopup.style.opacity = "0";
+    gottenpopup.style.height = "0px";
+    popuptoggled = false;
+  }
+}
+
+$("ul").on("click", "li", function() {
+  $(this).toggleClass("marked");
+})
+
+$("ul").on("click", "span", function(e) {
+  $(this).parent().fadeOut(500, function() {
+    $(this).remove();
+  });
+  e.stopPropagation();
+})
+
+$(".fa-plus").click(function() {
+  $("input[type='text']").fadeToggle();
+})
