@@ -30,3 +30,28 @@ var testfun = function() {
 
   }
 }
+var testfun2 = function() {
+  var gottenEle2 = document.querySelectorAll(".delete"),
+    r2 = 255,
+    b2 = 0,
+    g2 = 0,
+    a2 = 0.50,
+    gswitch2 = false;
+  for (var i = 0; i < gottenEle2.length; i++) {
+    gottenEle2[i].style.background = "rgba(" + r2 + ", " + g2 + ", " + b2 + ", " + a2 + ")";
+    if (!gswitch2) {
+      if (g2 < 255) {
+        g2 += 20;
+      } else {
+        gswitch2 = true;
+      }
+    } else {
+      if (g2 > 0) {
+        g2 -= 20;
+      } else {
+        gswitch2 = false;
+      }
+    }
+
+  }
+}
