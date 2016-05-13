@@ -55,3 +55,18 @@ var testfun2 = function() {
 
   }
 }
+
+$("input[type=text]").keypress(function(e) {
+  if (event.which === 13) {
+    var inputted = $(this).val();
+    if (inputted == "") {
+      return visib("warning");
+    }
+    $(this).val("");
+    $("ul").append("<li><span class = 'delete'><i class=\"fa fa-trash\"></i></span>" + inputted + "</li>");
+    gottenEle = document.querySelectorAll("li");
+    testfun();
+    visib("added");
+    testfun2();
+  }
+})
